@@ -1,4 +1,4 @@
-bipackage com.example.voicelist
+package com.example.voicelist
 
 import android.Manifest
 import android.app.AlertDialog
