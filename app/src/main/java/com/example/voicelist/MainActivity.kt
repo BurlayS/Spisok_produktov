@@ -1,4 +1,4 @@
-package com.example.voicelist
+bipackage com.example.voicelist
 
 import android.Manifest
 import android.app.AlertDialog
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                 pauseHandler.removeCallbacks(pauseRunnable)
                 val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                 if (!matches.isNullOrEmpty()) {
-                    val spokenText = matches.lowercase(Locale.getDefault()).trim()
+                    val spokenText = matches,.lowercase(Locale.getDefault()).trim()
                     handleSpokenText(spokenText, isFinal = true)
                 }
                 lastPartialText = ""
@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity() {
             override fun onPartialResults(partialResults: Bundle?) {
                 val matches = partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                 if (!matches.isNullOrEmpty()) {
-                    val partial = matches.lowercase(Locale.getDefault()).trim()
+                    val partial = matches[0].lowercase(Locale.getDefault()).trim()
                     tvStatus.text = "Слышу: $partial"
 
                     if (isWaitingWakeWord && (partial.contains("запиши") || partial.contains("запишіть") || partial.contains("record"))) {
