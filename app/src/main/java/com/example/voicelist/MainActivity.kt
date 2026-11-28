@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
                 pauseHandler.removeCallbacks(pauseRunnable)
                 val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
                 if (!matches.isNullOrEmpty()) {
-                    val spokenText = matches,.lowercase(Locale.getDefault()).trim()
+                    val spokenText = matches[0].lowercase(Locale.getDefault()).trim()
                     handleSpokenText(spokenText, isFinal = true)
                 }
                 lastPartialText = ""
